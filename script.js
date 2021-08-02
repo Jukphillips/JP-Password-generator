@@ -1,12 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
+
+var lower = "abcdefghijklmnopqrstuvwxyz"
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var numeric = "1234567890"
+var special = "!@#$%^&*()_-[]{}\|;:',./?+="
+var userSelection = "";
 
 // Write password to the #password input
-function writePassword() {
-  
+function writePassword() { 
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
@@ -36,7 +38,23 @@ function passwordLength() {
       return generatePassword();
   }
 
-    }
+  if(lowerConfirm) {
+      userSelection += lower
+  } 
+ if(upperConfirm) {
+      userSelection += upper
+  }
+  if(numericConfirm) {
+      userSelection += numeric
+  }
+  if(specialConfirm) {
+      userSelection += special
+  }
+
+  
+  }
+
+
 
 
 // Add event listener to generate button
