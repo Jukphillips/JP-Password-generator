@@ -1,22 +1,17 @@
 # JP-Password-generator
-create workable button that starts prompts for password criteria
-- 1st  add an event listener
 
-prompt for how many characters no lower then 8 and no more than 128 characters
- - if inputs are not within the rang than user recieves a confirm to only put 8-128 characters
+## User Story
 
-confirm prompt asking wether they want to include a lower case characters
- - if user inputs yes then computer includes lower case characters
+The user clicks "generate password" button and is than asked to give criteria on what they would like to include in their generated password. First they recieve a prompt asking them to enter a value between 8 and 128 in lenght. This will determine how long their password will be. If they enter anything other than a number, a number less than 8 or greater than 128, then the system will alert the user to re-enter a vaild input until they do. Next they are prompted with four confirms. Confirm if they want lowercase leters, uppercase letters, numeric characters, or special characters respectively. The user must choose one of the four or the system will create an alert asking them to "please choose at least one character type!" Once they enter in they're criteria the application takes in that information and creates a password that includes said criteria.
 
-confirm prompt asking wether they want to include a upper case characters
-- if user inputs yes then computer includes a random number of upper case characters
+## Technologies Used
 
-confirm prompt asking wether they want to include a numeric characters
-- if user inputs yes then computer includes numeric characters
+HTML, CSS, JAVASCRIPT
 
-confirm prompt asking wether they want to include a special characters characters
--  if user inputs yes then computer includes special characters
+## Application Link:
 
-computer takes in the inputs and randomizes an output that includes
+[Jp Password Generator](https://jukphillips.github.io/JP-Password-generator/)
 
-computer will than display that input in the text box 
+## Image of Deployed Application
+
+![Picture of deployed Password Generator](./Images/password-generator-readme.Png)
