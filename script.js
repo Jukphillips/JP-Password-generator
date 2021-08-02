@@ -12,26 +12,18 @@ function writePassword() {
     passwordText.value = password;
 }
 
-function lenght() {
+function passwordLength() {
     var characterValue = prompt("Please put in a numeric value between 8 and 128 for your desired lenght password!");
-  var characterValuedenied = ("abcdefghijklmnopqrstuvwxyz!@#$%^&*()<>?/;':[]{}\| ").split(" ");
   console.log(characterValue);
-  if (characterValuedenied.includes(characterValue)) {
+  if (isNaN(characterValue)) {
       alert("Please input a numeric value between 8 and 128!") 
-      return writePassword();   
-    } 
-    else if (characterValue > 128) {
-      alert("Please choose a value between 8 and 128!");
-      return writePassword();
-    }
- else if(characterValue < 8) {
-      alert("Please choose a value greater then or equal to 8 but less than or equal 128");
-      return Password();
-  } 
-
-    generatePassword(); 
-} 
-
+      return passwordLength();   
+  } else if (characterValue > 128 || characterValue < 8) {
+      alert("Please input a number greater than or equal to 8 and less than or equal to 128!");
+      return passwordLength();
+  }
+  generatePassword();
+}
     function generatePassword() {
     
   var lowerConfirm = confirm("Would you like to include lower case letters in your password?");
@@ -48,4 +40,4 @@ function lenght() {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", length);
+generateBtn.addEventListener("click", passwordLength)
