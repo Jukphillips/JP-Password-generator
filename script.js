@@ -2,21 +2,24 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword(event) {
+function writePassword() {
 //   var password = generatePassword();
 //   var passwordText = document.querySelector("#password");
-  event.preventDefault();
+  
   var characterValue = prompt("Please put in a numeric value between 8 and 128 for your desired lenght password!");
   var characterValuedenied = ("abcdefghijklmnopqrstuvwxyz!@#$%^&*()<>?/;':[]{}\| ").split(" ");
   console.log(characterValue);
   if (characterValuedenied.includes(characterValue)) {
-      alert("Please input a numeric value between 8 and 128!")    
+      alert("Please input a numeric value between 8 and 128!") 
+      return writePassword();   
     } 
     else if (characterValue > 128) {
       alert("Please choose a value between 8 and 128!");
+      return writePassword();
     }
  else if(characterValue < 8) {
       alert("Please choose a value greater then or equal to 8 but less than or equal 128");
+      return writePassword();
   } 
 
 
