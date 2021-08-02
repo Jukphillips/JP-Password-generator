@@ -1,21 +1,25 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 var lower = "abcdefghijklmnopqrstuvwxyz".split();
 var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
 var numeric = "1234567890".split();
 var special = "!@#$%^&*()_-[]{}\|;:',./?+=".split();
 var userSelection = "";
 
+
 // Write password to the #password input
 function writePassword() { 
-    var password = generatePassword;
+    var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
+    
+
 }
 
 function generatePassword() {
-    var result = " ";
+    var output = "";
     var characterValue = prompt("Please put in a numeric value between 8 and 128 for your desired lenght password!");
   console.log(characterValue);
   if (isNaN(characterValue)) {
@@ -48,10 +52,11 @@ function generatePassword() {
       userSelection += special
   }
   for (var i = 0; i < characterValue; i++) {
-    result += userSelection.charAt(Math.floor(Math.random() * userSelection.length)); 
+    output += userSelection.charAt(Math.floor(Math.random() * userSelection.length)); 
   }
-  console.log(result);
-     return result;   
+ 
+  console.log(output);
+  return output;
 
   }
 
@@ -59,4 +64,4 @@ function generatePassword() {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword)
+generateBtn.addEventListener("click", writePassword);
